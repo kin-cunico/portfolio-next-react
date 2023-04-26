@@ -82,7 +82,7 @@ export default function ContactUs() {
 					maxLength={600}
 					required
 					placeholder="write your query here"
-					className="text-justify placeholder:text-lime-600 flex flex-wrap justify-center w-80 h-80 bg-slate-800 rounded-lg text-lime-500"
+					className="text-justify p-2 placeholder:text-lime-600 flex flex-wrap justify-center w-80 h-80 bg-slate-800 rounded-lg text-lime-500"
 					onChange={formik.handleChange}
 					onBlur={formik.handleBlur}
 					value={formik.values.message}
