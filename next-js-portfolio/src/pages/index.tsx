@@ -1,5 +1,6 @@
 import { useAnimate, usePresence } from "framer-motion";
-import { useEffect } from "react";
+// import ContactUs from "./ContactForm";
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,10 +11,17 @@ import {
 	AiFillGithub,
 } from "react-icons/ai";
 import kincunico from "../images/kin.png";
+const WPP_N = "00447459777592";
+import ContactUs from "./ContactForm";
 
 export default function Home() {
 	const [isPresent, safeToRemove] = usePresence();
+	// TODO animate the
 	const [scope, animate] = useAnimate();
+	// TODO CREATE the toggle functionality for the day/night button
+	const [toggle, setToggle] = useState();
+	// TODO CREATE the contact button to roll down to the contact form
+	const [contact, setContact] = useState();
 
 	//bit of code to handle new animate from framer-motion
 	useEffect(() => {
@@ -54,7 +62,7 @@ export default function Home() {
 			</Head>
 			<main className="bg-slate-900 px-10 h-auto">
 				<section>
-					<nav className="p-10 mb-1 flex align-middle justify-evenly gap-5">
+					<nav className="p-8 flex align-middle justify-evenly gap-5">
 						<Link href="/">
 							<h1 className="text-xl font-bold text-lime-500 font-nothing">
 								KinCunico.dev
@@ -67,8 +75,8 @@ export default function Home() {
 							</li>
 							<li>
 								<a
-									className="bg-gradient-to-b from-slate-500 to-slate-800 text-gray-400 px-6 py-3 rounded-md ml-8"
-									href=""
+									className="bg-gradient-to-b from-slate-500 to-slate-800 text-gray-400 px-6 py-2 rounded-md ml-8"
+									href={"https://wa.me/" + WPP_N}
 									target="blank"
 								>
 									Contact
@@ -76,8 +84,8 @@ export default function Home() {
 							</li>
 						</ul>
 					</nav>
-					<section className="flex flex-col gap-2 justify-center">
-						<div className="flex flex-col items-left gap-2 p-10">
+					<section className="flex flex-col gap-2 justify-center border-b-2 pb-2">
+						<div className="flex flex-col items-left gap-2 p-10 items-center">
 							<h2 className="font-bold tracking-wider text-4xl py-2 text-lime-500">
 								Kin Cunico
 							</h2>
@@ -85,10 +93,10 @@ export default function Home() {
 								Web Developer
 							</h3>
 							<p className="tracking-wider leading-5 text-gray-400">
-								Italo-Brazilian web developer living in the UK.
+								Italo-Brazilian web developer based in the UK.
 							</p>
 						</div>
-						<div className="flex justify-evenly p-2 text-5xl  text-lime-500">
+						<div className="flex justify-evenly p-2 pb-4 text-5xl  text-lime-500">
 							<a
 								href="https://github.com/kin-cunico"
 								target="blank"
@@ -112,7 +120,7 @@ export default function Home() {
 							<Image
 								src={kincunico}
 								alt="photo"
-								className="drop-shadow-xl mx-auto absolute -bottom-5 left-14"
+								className="drop-shadow-xl mx-auto absolute -bottom-5 left-14 pointer-events-none"
 							/>
 						</div>
 					</section>
@@ -121,97 +129,54 @@ export default function Home() {
 					</h3>
 					<section className="pb-5">
 						<div className="flex flex-col flex-wrap gap-2 items-center justify-between">
-							<h4 className="text-slate-50 font-bold tracking-wide">
-								Technologies:
+							<h4 className="text-slate-50 font-bold letter-spacing">
+								Projects:
 							</h4>
-							<a
-								href=""
-								className="flex gap-4 w-full justify-around"
-								target="blank"
-							>
-								<p className="flex rounded-md box-content px-2 bg-lime-500 w-28 justify-center flex-col text-center">
-									Javascript
-								</p>
-								<p className="rounded-md box-content px-2 bg-slate-500 w-36 text-center text-slate-950 font-semibold">
-									Hex Color Picker: created a hex-color picker with Javascript,
-									HTML, and CSS.
-								</p>
-							</a>
 
-							<a
-								href=""
-								className="flex gap-4 w-full justify-around"
-								target="blank"
-							>
-								<p className="flex rounded-md box-content px-2 bg-lime-500 w-28 justify-center flex-col text-center">
-									React.js
+							<div className="flex gap-4 w-full justify-around flex-wrap items-center pb-2 border-b-2">
+								<a
+									href="https://gym-typescript-82j.pages.dev/"
+									target="blank"
+								>
+									<p className="rounded-md box-content px-2 bg-slate-500 w-36 h-1/2 text-center text-slate-950 font-semibold">
+										Gym (SPA) with Typescript.
+									</p>
+								</a>
+								<p className="flex leading-8 rounded-md box-border px-2 text-lime-500 w-28 h-1/2 justify-center flex-col text-left">
+									React with Typescript, Tailwind CSS, Framer Motion, and
+									FormSubmit
 								</p>
-								<p className="rounded-md box-content px-2 bg-slate-500 w-36 text-center text-slate-950 font-semibold ">
-									Coming Soon
+								<iframe
+									src="https://gym-typescript-82j.pages.dev/"
+									title="Gym webapp with typescript"
+									allowTransparency
+									frameBorder={0}
+								></iframe>
+							</div>
+
+							<div className="flex gap-4 w-full justify-around flex-wrap items-center">
+								<a
+									href="https://gym-typescript-82j.pages.dev/"
+									target="blank"
+								>
+									<p className="rounded-md box-content px-2 bg-slate-500 w-36 h-1/2 text-center text-slate-950 font-semibold">
+										Gym (SPA) with Typescript.
+									</p>
+								</a>
+								<p className="flex leading-8 rounded-md box-border px-2 text-lime-500 w-28 h-1/2 justify-center flex-col text-left">
+									React with Typescript, Tailwind CSS, Framer Motion, and
+									FormSubmit
 								</p>
-							</a>
-							<a
-								href=""
-								className="flex gap-4 w-full justify-around"
-								target="blank"
-							>
-								<p className="flex rounded-md box-content px-2 bg-lime-500 w-28 justify-center flex-col text-center">
-									Next.js
-								</p>
-								<p className="rounded-md box-content px-2 bg-slate-500 w-36 text-center text-slate-950 font-semibold">
-									Currently working in a webapp.
-								</p>
-							</a>
-							<a
-								href=""
-								className="flex gap-4 w-full justify-around"
-								target="blank"
-							>
-								<p className="flex rounded-md box-content px-2 bg-lime-500 w-28 justify-center flex-col text-center">
-									Typescript
-								</p>
-								<p className="rounded-md box-content px-2 bg-slate-500 w-36 text-center text-slate-950 font-semibold">
-									Gym (SPA) with Typescript.
-								</p>
-							</a>
-							<a
-								href=""
-								className="flex gap-4 w-full justify-around"
-								target="blank"
-							>
-								<p className="flex rounded-md box-content px-2 bg-lime-500 w-28 justify-center flex-col text-center">
-									Tailwind CSS
-								</p>
-								<p className="rounded-md box-content px-2 bg-slate-500 w-36 text-center text-slate-950 font-semibold">
-									This website
-								</p>
-							</a>
-							<a
-								href=""
-								className="flex gap-4 w-full justify-around"
-								target="blank"
-							>
-								<p className="flex rounded-md box-content px-2 bg-lime-500 w-28 justify-center flex-col text-center">
-									GraphQL
-								</p>
-								<p className="rounded-md box-content px-2 bg-slate-500 w-36 text-center text-slate-950 font-semibold">
-									Currently working in a webapp.
-								</p>
-							</a>
-							<a
-								href=""
-								className="flex gap-4 w-full justify-around"
-								target="blank"
-							>
-								<p className="flex rounded-md box-content px-2 bg-lime-500 w-28 justify-center flex-col text-center">
-									Python
-								</p>
-								<p className="rounded-md px-2 box-content  bg-slate-500 w-36 text-center text-slate-950 font-semibold">
-									TBA
-								</p>
-							</a>
+								<iframe
+									src="https://gym-typescript-82j.pages.dev/"
+									title="Gym webapp with typescript"
+									allowTransparency
+									frameBorder={0}
+								></iframe>
+							</div>
 						</div>
 					</section>
+					<ContactUs />
 				</section>
 				<footer className=" text-slate-50 py-5">
 					<div className="flex flex-wrap justify-around gap-10">

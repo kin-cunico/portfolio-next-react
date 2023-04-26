@@ -22,3 +22,22 @@ body {
 	font-family: "Nothing+You+Could+Do";
 	src: url("https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap");
 }
+
+::selection {
+	background: hsl(84, 81%, 44%);
+	color: hsl(222, 47%, 11%);
+}
+
+iframe {
+	width: 900px;
+	min-width: 360px;
+	height: 600px;
+	border: none;
+	background: #ffffff;
+}
+
+.letter-spacing {
+	letter-spacing: 10px;
+	width: auto;
+	font-size: 2.5rem;
+}
