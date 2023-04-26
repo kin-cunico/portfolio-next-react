@@ -7,7 +7,6 @@ module.exports = nextConfig;
 
 module.exports = {
 	images: {
-		loader: "akamai",
-		path: "",
+		unoptmized: true,
 	},
 };

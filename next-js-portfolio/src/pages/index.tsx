@@ -76,7 +76,7 @@ export default function Home() {
 							<li>
 								<a
 									className="bg-gradient-to-b from-slate-500 to-slate-800 text-gray-400 px-6 py-2 rounded-md ml-8"
-									href={"https://wa.me/" + WPP_N}
+									href="https://wa.me/+4407459777592"
 									target="blank"
 								>
 									Contact
@@ -117,7 +117,7 @@ export default function Home() {
 							</a>
 						</div>
 						<div className="border-8 border-slate-400 rounded-full mx-auto w-80 h-80 relative bg-gradient-to-b from-slate-400 to-slate-900 overflow-clip backdrop-contrast-200">
-							<Image
+							<img
 								src={kincunico}
 								alt="photo"
 								className="drop-shadow-xl mx-auto absolute -bottom-5 left-14 pointer-events-none"
