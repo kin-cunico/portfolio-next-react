@@ -117,7 +117,7 @@ export default function Home() {
 							</a>
 						</div>
 						<div className="border-8 border-slate-400 rounded-full mx-auto w-80 h-80 relative bg-gradient-to-b from-slate-400 to-slate-900 overflow-clip backdrop-contrast-200">
-							<img
+							<Image
 								src={kincunico}
 								alt="photo"
 								className="drop-shadow-xl mx-auto absolute -bottom-5 left-14 pointer-events-none"
