@@ -6,7 +6,9 @@ const nextConfig = {
 module.exports = nextConfig;
 
 module.exports = {
-	images: {
-		unoptmized: true,
+	experimental: {
+		images: {
+			unoptmized: true,
+		},
 	},
 };
