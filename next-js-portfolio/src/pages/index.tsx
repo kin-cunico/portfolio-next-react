@@ -10,8 +10,8 @@ import {
 	AiFillLinkedin,
 	AiFillGithub,
 } from "react-icons/ai";
+import { IoLogoWhatsapp } from "react-icons/io";
 import kincunico from "../images/kin.png";
-const WPP_N = "00447459777592";
 import ContactUs from "./ContactForm";
 
 export default function Home() {
@@ -24,29 +24,25 @@ export default function Home() {
 	const [contact, setContact] = useState();
 
 	//bit of code to handle new animate from framer-motion
-	useEffect(() => {
-		if (isPresent) {
-			const Animation = async () => {
-				await animate(
-					//Here we pass the animation to our selected scope(in this case to the page)
-					scope.current,
-					{ backgroundColor: "#000" },
-					{ duration: 0.7, delay: 0.2 }
-				);
-			};
-			Animation();
-		} else {
-			const exitAnime = async () => {
-				await animate(
-					scope.current,
-					{ opacity: [1, 0] },
-					{ duration: 0.5, delay: 0.2 }
-				);
-				safeToRemove();
-			};
-			exitAnime();
-		}
-	});
+	// useEffect(() => {
+	// 	if (isPresent) {
+	// 		const Animation = async () => {
+	// 			await animate(
+	// 				//Here we pass the animation to our selected scope(in this case to the page)
+	// 				"h1",
+	// 				{ color: "#90c000" },
+	// 				{ duration: 2, delay: 0.4 }
+	// 			);
+	// 		};
+	// 		Animation();
+	// 	} else {
+	// 		const exitAnime = async () => {
+	// 			await animate("h1", { opacity: [1, 0] }, { duration: 0.5, delay: 0.2 });
+	// 			safeToRemove();
+	// 		};
+	// 		exitAnime();
+	// 	}
+	// });
 	return (
 		<div ref={scope}>
 			<Head>
@@ -64,29 +60,33 @@ export default function Home() {
 				<section>
 					<nav className="p-8 flex align-middle justify-evenly gap-5">
 						<Link href="/">
-							<h1 className="text-xl font-bold text-lime-500 font-nothing">
+							<h1
+								role="backlink"
+								className="text-xl font-bold text-lime-500 font-nothing hover:text-lime-800"
+							>
 								KinCunico.dev
 							</h1>
 						</Link>
 
 						<ul className="flex items-center">
 							<li>
-								<BsFillMoonStarsFill className="cursor-pointer text-xl text-gray-400" />
+								<BsFillMoonStarsFill className="cursor-pointer text-xl text-gray-400 hover:text-gray-50" />
 							</li>
 							<li>
 								<a
-									className="bg-gradient-to-b from-slate-500 to-slate-800 text-gray-400 px-6 py-2 rounded-md ml-8"
+									className="flex flex-wrap gap-3 items-center box-content font-bold bg-gradient-to-b from-slate-500 to-slate-800 text-gray-400 px-4 py-2 rounded-md ml-8 hover:text-lime-500"
 									href="https://wa.me/+4407459777592"
 									target="blank"
 								>
-									Contact
+									<p>Contact</p>
+									<IoLogoWhatsapp className="text-lime-500 align-middle relative hover:text-lime-400" />
 								</a>
 							</li>
 						</ul>
 					</nav>
 					<section className="flex flex-col gap-2 justify-center border-b-2 pb-2">
 						<div className="flex flex-col items-left gap-2 p-10 items-center">
-							<h2 className="font-bold tracking-wider text-4xl py-2 text-lime-500">
+							<h2 className="font-bold tracking-wider text-4xl py-2 text-lime-500 cursor-context-menu">
 								Kin Cunico
 							</h2>
 							<h3 className="font-semibold tracking-wide py-2 text-gray-400">
@@ -100,18 +100,21 @@ export default function Home() {
 							<a
 								href="https://github.com/kin-cunico"
 								target="blank"
+								className="hover:text-lime-800 transition-all"
 							>
 								<AiFillGithub className="items-end" />
 							</a>
 							<a
 								href="https://www.linkedin.com/in/kincunicoen/"
 								target="blank"
+								className="hover:text-lime-800 transition-all"
 							>
 								<AiFillLinkedin className="" />
 							</a>
 							<a
 								href="https://twitter.com/KinCunico"
 								target="blank"
+								className="hover:text-lime-800 transition-all"
 							>
 								<AiFillTwitterCircle className="" />
 							</a>
