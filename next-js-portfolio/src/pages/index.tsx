@@ -13,6 +13,7 @@ import {
 import { IoLogoWhatsapp } from "react-icons/io";
 import kincunico from "../images/kin.png";
 import ContactUs from "./ContactForm";
+import gif from "src/images/ezgif-5-4862514fa8.gif";
 
 export default function Home() {
 	const [isPresent, safeToRemove] = usePresence();
@@ -153,29 +154,30 @@ export default function Home() {
 									src="https://gym-typescript-82j.pages.dev/"
 									title="Gym webapp with typescript"
 									allowTransparency
+									role="second-project"
 									frameBorder={0}
 								></iframe>
 							</div>
 
 							<div className="flex gap-4 w-full justify-around flex-wrap items-center">
 								<a
-									href="https://gym-typescript-82j.pages.dev/"
+									href="https://github.com/kin-cunico/Random-HEX-Generator"
 									target="blank"
 								>
 									<p className="rounded-md box-content px-2 bg-slate-500 w-36 h-1/2 text-center text-slate-950 font-semibold">
-										Gym (SPA) with Typescript.
+										Random HEX color Generator, in JS.
 									</p>
 								</a>
 								<p className="flex leading-8 rounded-md box-border px-2 text-lime-500 w-28 h-1/2 justify-center flex-col text-left">
-									React with Typescript, Tailwind CSS, Framer Motion, and
-									FormSubmit
+									Javascript, with HTML5 and CSS3.
 								</p>
-								<iframe
-									src="https://gym-typescript-82j.pages.dev/"
-									title="Gym webapp with typescript"
-									allowTransparency
-									frameBorder={0}
-								></iframe>
+								<Image
+									className="flex flex-wrap"
+									src={gif}
+									title="Hex-color-gif"
+									alt="HEX-Color-GIF"
+									role="first-project"
+								/>
 							</div>
 						</div>
 					</section>
